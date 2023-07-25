@@ -1,22 +1,7 @@
 import { useEffect, useState } from "react";
 import Post from "./Post";
 
-interface PostModel {
-	id: number;
-	message: string;
-	imageUrl: string;
-	createdAt: string;
-	postedBy: PostUserModel;
-	likedBy: PostUserModel[];
-	dislikedBy: PostUserModel[];
-}
-
-interface PostUserModel {
-	id: number;
-	name: string;
-	username: string;
-	email: string;
-}
+import PostModel from "../models/PostModel";
 
 function PageOfPosts() {
 	const [posts, setPosts] = useState<PostModel[]>();
