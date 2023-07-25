@@ -7,12 +7,10 @@ function PageOfPosts() {
 	const [posts, setPosts] = useState<PostModel[]>();
 
 	useEffect(() => {
-		fetch("http://localhost:3001/posts")
+		fetch(`http://localhost:3001/posts?page=3`)
 			.then((response) => response.json())
 			.then((data) => setPosts(data.results));
 	}, []);
-
-	console.log(posts);
 
 	return (
 		<>
