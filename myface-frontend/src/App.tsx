@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import RootLayout from "./components/RootLayout";
 import PageOfPosts from "./components/PageOfPosts";
+import PageOfUsers from "./components/PageOfUsers";
 
 const router = createBrowserRouter([
 	{
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
 		  {
 		    path: "posts",
 		    element: <PageOfPosts />,
+		  },
+		  {
+		    path: "users",
+		    element: <PageOfUsers />,
 		  },
 		],
 	},

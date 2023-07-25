@@ -1,0 +1,10 @@
+.user-nav-buttons{
+    font-size: 1.5rem;
+    margin: 20px;
+    padding: 15px;
+    border: 4px solid white;
+}
+
+.user-nav-buttons:hover{
+    background-color: yellow;
+}
