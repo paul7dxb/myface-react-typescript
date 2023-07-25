@@ -1,4 +1,5 @@
 import UserModel from "../models/UserModel";
+import { NavLink } from "react-router-dom";
 
 interface UserProps {
 	userData: UserModel;
@@ -8,6 +9,7 @@ function User({ userData }: UserProps) {
 	return (
 		<div>
 			<p>{userData.id}</p>
+            <NavLink to={`/users/${userData.id}`} >{userData.username}</NavLink>
 			<p>{userData.name}</p>
 			<img
 				onError={({ currentTarget }) => {

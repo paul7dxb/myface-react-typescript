@@ -5,6 +5,7 @@ import "./App.css";
 import RootLayout from "./components/RootLayout";
 import PageOfPosts from "./components/PageOfPosts";
 import PageOfUsers from "./components/PageOfUsers";
+import UserDetail from "./components/UserDetail";
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
 		    path: "users",
 		    element: <PageOfUsers />,
 		  },
+		  {
+		    path: "users/:userID",
+		    element: <UserDetail />,
+		  },
+
 		],
 	},
 ]);
