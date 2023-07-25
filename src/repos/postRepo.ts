@@ -53,6 +53,36 @@ export async function getPostsByUserInteraction(page: number, pageSize: number, 
         .offset((page - 1) * pageSize);
 }
 
+
+export async function getPostsUserLiked(
+    page: number,
+    pageSize: number,
+    userId: number,
+    interactionType: InteractionType
+  ): Promise<Post[]> {
+    return database<Post>("posts")
+      .innerJoin("interactions", "interactions.postId", "posts.id")
+      .innerJoin("users", "users.id", "interactions.userId")
+      .select("posts.*")
+      .where("users.id", userId)
+      .where("interactions.interactionType", interactionType)
+      .orderBy("interactions.date", "desc")
+      .limit(pageSize)
+      .offset((page - 1) * pageSize);
+  }
+  
+  export async function getPostsByUser(
+    page: number,
+    pageSize: number,
+    userId: number,
+  ): Promise<Post[]> {
+    return database<Post>("posts")
+      .select("*")
+      .where("userId", userId)
+      .limit(pageSize)
+      .offset((page - 1) * pageSize);
+  }
+
 export async function createPost(newPost: CreatePostRequest): Promise<void> {
     await database<Post>('posts')
         .insert({

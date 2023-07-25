@@ -25,13 +25,12 @@ const router = createBrowserRouter([
 		    path: "users/:userID",
 		    element: <UserDetail />,
 		  },
-
 		],
 	},
 ]);
 
 function App() {
-return <RouterProvider router={router} />;
+	return <RouterProvider router={router} />;
 }
 
 export default App;

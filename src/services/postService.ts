@@ -5,6 +5,7 @@ import {getByPostInteraction, getUser} from "../repos/userRepo";
 import {Post} from "../models/database/post";
 import {CreatePostRequest} from "../models/api/createPostRequest";
 import {createInteraction} from "../repos/interactionRepo";
+import { InteractionType } from "../models/database/interaction";
 
 export async function getPageOfPosts(page: number, pageSize: number): Promise<Page<PostModel>> {
     const posts = await postRepo.getPosts(page, pageSize);
@@ -36,6 +37,38 @@ export async function likePost(userId: number, postId: number): Promise<void> {
 
 export async function dislikePost(userId: number, postId: number): Promise<void> {
     return createInteraction(userId, postId, "DISLIKE");
+}
+
+export async function getPageOfInteractedPosts(page:number, pageSize:number,userId: number, interaction:InteractionType){
+  const posts = await postRepo.getPostsUserLiked(1,10,userId,interaction)
+  const postModels = await Promise.all(posts.map(toPostModel));
+  const postsCount = postModels.length;
+
+  return {
+    results: postModels,
+    next:
+      page * pageSize < postsCount
+        ? `/posts/?page=${page + 1}&pageSize=${pageSize}`
+        : null,
+    previous: page > 1 ? `/posts/?page=${page - 1}&pageSize=${pageSize}` : null,
+    total: postsCount,
+  };
+}
+
+export async function getUserPosts(page:number, pageSize:number,userId: number){
+  const posts = await postRepo.getPostsByUser(1,10,userId)
+  const postModels = await Promise.all(posts.map(toPostModel));
+  const postsCount = postModels.length;
+
+  return {
+    results: postModels,
+    next:
+      page * pageSize < postsCount
+        ? `/posts/?page=${page + 1}&pageSize=${pageSize}`
+        : null,
+    previous: page > 1 ? `/posts/?page=${page - 1}&pageSize=${pageSize}` : null,
+    total: postsCount,
+  };
 }
 
 async function toPostModel(post: Post): Promise<PostModel> {

@@ -3,31 +3,44 @@ import { useEffect, useState } from "react";
 import UserModel from "../models/UserModel";
 import User from "./User";
 import Post from "./Post";
+import PostModel from "../models/PostModel";
 
+function UserDetail() {
+	let { userID } = useParams();
 
-function UserDetail(){
+	const [user, setUser] = useState<UserModel>();
+    const [usersPosts, setUsersPosts] = useState<PostModel[]>();
 
-    let { userID } = useParams();
-
-    const [user, setUser] = useState<UserModel>();
 
 	useEffect(() => {
 		fetch(`http://localhost:3001/users/${userID}`)
 			.then((response) => response.json())
-			.then((data) => setUser(data));
+			.then((data) => {
+				setUser(data.user);
+                setUsersPosts(data.userPosts.results)
+                console.log(data)
+			});
 	}, []);
 
-    return (
-        <div>         
-            {user === undefined ? <p>User Not Found!</p> :( <div>
-            <User userData={user} />            
-                {/* {user.posts.map((post) => <Post postData={post} />}) */}
-            </div>
-            )}
-        </div>        
-        )
+	return (
+		<div>
 
-        
+			{user === undefined ? (
+				<p>User Not Found!</p>
+			) : (
+				<div>
+					<User userData={user} />
+				</div>
+			)}
+
+			{usersPosts === undefined ? (
+				<p>No posts found!</p>
+			) : (
+                usersPosts.map((post) => <Post key={post.id} postData={post} />)
+			)}
+			
+		</div>
+	);
 }
 
- export default UserDetail
+export default UserDetail;

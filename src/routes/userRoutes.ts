@@ -2,6 +2,8 @@ import express from "express";
 import {createUser, getPageOfUsers, getUser} from "../services/userService";
 import {CreateUserRequest} from "../models/api/createUserRequest";
 import { body, validationResult } from "express-validator";
+import { getPageOfInteractedPosts, getUserPosts } from "../services/postService";
+
 
 const router = express.Router();
 
@@ -35,7 +37,14 @@ router.get('/:userId/', async (request, response) => {
     const userId = parseInt(request.params.userId);
 
     const user = await getUser(userId);
-    return response.status(200).json(user);
+
+    const userPosts = await getUserPosts(1,10,userId)
+    const likedPosts = await getPageOfInteractedPosts(1,10,userId,"LIKE")
+    const dislikedPosts = await getPageOfInteractedPosts(1,10,userId,"DISLIKE")
+
+    const results = {user, userPosts, likedPosts, dislikedPosts }
+    
+    return response.status(200).json(results);
 });
 
 export default router;
