@@ -5,6 +5,11 @@ interface PostProps {
 	postData: PostModel;
 }
 
+function formatDate(dateString:string){
+	const date = new Date(dateString)
+	return date.toLocaleDateString("en-GB")
+}
+
 function Post({ postData }: PostProps) {
 	return (
 		<div>			
@@ -17,7 +22,7 @@ function Post({ postData }: PostProps) {
 				src={postData.imageUrl}
 			/>
 			<Link to={`/users/${postData.postedBy.id}`}>Posted by {postData.postedBy.username}</Link>
-			<p>{postData.createdAt}</p>
+			<p>{formatDate(postData.createdAt)}</p>
 			<p>{postData.message}</p>			
 		</div>
 	);
