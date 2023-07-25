@@ -6,7 +6,6 @@ import { useSearchParams, NavLink } from "react-router-dom";
 import "./PageOfPosts.css"
 
 
-
 function PageOfPosts() {
 	const [posts, setPosts] = useState<PostModel[]>();
 

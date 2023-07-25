@@ -5,8 +5,6 @@ import { useSearchParams, NavLink } from "react-router-dom";
 
 import "./PageOfUsers.css"
 
-
-
 function PageOfUsers() {
 	const [users, setUsers] = useState<UserModel[]>();
 
