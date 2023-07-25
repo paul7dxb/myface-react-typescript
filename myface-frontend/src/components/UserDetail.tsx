@@ -25,7 +25,7 @@ function UserDetail() {
                 setUsersLikedPosts(data.likedPosts.results)
                 setUsersDislikedPosts(data.dislikedPosts.results)
 			});
-	}, []);
+	}, [userID]);
 
     useEffect(() => {
         setIsLoading(user === undefined

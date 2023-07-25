@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PostModel from "../models/PostModel";
 
 interface PostProps {
@@ -6,9 +7,7 @@ interface PostProps {
 
 function Post({ postData }: PostProps) {
 	return (
-		<div>
-			<p>{postData.id}</p>
-			<p>{postData.message}</p>
+		<div>			
 			<img
 				onError={({ currentTarget }) => {
 					currentTarget.onerror = null; // prevents looping
@@ -17,8 +16,9 @@ function Post({ postData }: PostProps) {
 				}}
 				src={postData.imageUrl}
 			/>
+			<Link to={`/users/${postData.postedBy.id}`}>Posted by {postData.postedBy.username}</Link>
 			<p>{postData.createdAt}</p>
-			<p>{postData.id}</p>
+			<p>{postData.message}</p>			
 		</div>
 	);
 }
