@@ -1,10 +1,10 @@
 // import { useState } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import "./App.css";
+import "./App.scss";
 import RootLayout from "./components/RootLayout";
-import PageOfPosts from "./components/PageOfPosts";
-import PageOfUsers from "./components/PageOfUsers";
+import PageOfPosts from "./pages/posts/Posts";
+import PageOfUsers from "./pages/users/Users";
 import UserDetail from "./components/UserDetail";
 
 const router = createBrowserRouter([

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import User from "./User";
-import UserModel from "../models/UserModel";
+import User from "../../components/User";
+import UserModel from "../../models/UserModel";
 import { useSearchParams, Link } from "react-router-dom";
 
-import "./PageOfUsers.css"
+import "./Users.scss"
 
 function PageOfUsers() {
 	const [users, setUsers] = useState<UserModel[]>();

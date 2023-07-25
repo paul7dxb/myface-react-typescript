@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Post from "./Post";
-import PostModel from "../models/PostModel";
+import Post from "../../components/Post";
+import PostModel from "../../models/PostModel";
 import { useSearchParams, Link } from "react-router-dom";
 
-import "./PageOfPosts.css"
+import "./Posts.scss"
 
 
 function PageOfPosts() {
