@@ -1,10 +1,32 @@
+@use '../../index.scss' as *;
+
 .post-nav-buttons{
     font-size: 1.5rem;
     margin: 20px;
     padding: 15px;
-    border: 4px solid white;
+    color: $foregroundColor;
 }
 
 .post-nav-buttons:hover{
     background-color: yellow;
+}
+
+.post-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: $mobile-gutter;
+    margin-right: $mobile-gutter;
+    width: calc(100vw - 2*$mobile-gutter);
+
+    .post-card{
+        width: 100%;
+        margin: calc($mobile-gutter/2) 0;
+    }
+}
+
+.page-navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

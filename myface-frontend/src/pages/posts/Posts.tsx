@@ -23,14 +23,21 @@ function PageOfPosts() {
 
 	return (
 		<>
+			<h1>Posts Page</h1>
 			{posts === undefined ? (
 				<p>Loading...</p>
 			) : (
-				posts?.map((post) => <Post key={post.id} postData={post} />)
+				<div className="post-list">
+					{posts?.map((post) => <Post key={post.id} postData={post} />)}
+				</div>
+				
 			)}
 
-			{pageNumber > 1 ? <Link className="post-nav-buttons" to={`/posts?page=${pageNumber-1}`} >Previous</Link> : undefined}
+			<div className="page-navigation">
+				{pageNumber > 1 ? <Link className="post-nav-buttons" to={`/posts?page=${pageNumber-1}`} >Previous</Link> : undefined}
 			<Link className="post-nav-buttons" to={`/posts?page=${pageNumber+1}`} >Next</Link>
+			</div>
+			
 
 		</>
 	);
