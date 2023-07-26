@@ -1,5 +1,74 @@
-$activeColor: red;
+@use '../../index.scss' as *;
 
-.navbar-active{
-    color: $activeColor;
+
+
+.mobile-navbar-toggler{
+    position: absolute;
+    top: 0;
+    right:0;
+    font-size: 2em;
+    margin: .4em;
+    
+}
+
+.navbar {
+
+    display: none;
+
+    a {
+        text-decoration: none;
+        color: $foregroundColor;
+        font-weight: $lighterWeight;
+    }
+
+    .navbar-active{
+        color: $primaryColor;
+    }
+
+    &__title{
+        margin-top: 15vh;
+        margin-bottom: 10vh;
+        text-align: center;
+        font-weight: $regularWeight;
+        font-size: $mobile-font-size-title;
+    }
+
+    &--expanded{
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70vw;
+        height: 100vh;
+        z-index: 1;
+
+        background-color: $backgroundDarkerColor;
+
+        display: flex;
+        flex-direction: column; 
+    }
+
+    &__pages{
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+    
+        width: 100%;
+    
+        display: flex;
+        flex-direction: column;
+
+        a {
+            width: 100%;
+            text-align: center;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+        }
+    }
+
+    &__create-post{
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+        text-align: center;
+    }
+
 }
