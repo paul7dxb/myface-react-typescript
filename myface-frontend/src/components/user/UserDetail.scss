@@ -1,0 +1,15 @@
+@use '../../index.scss' as *;
+
+.user-posts{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.user-posts .post-card {
+    flex-shrink: 0;
+    margin: $mobile-card-padding;
+}
+
+
+

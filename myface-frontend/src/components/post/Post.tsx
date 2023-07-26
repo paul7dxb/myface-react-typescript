@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PostModel from "../../models/PostModel";
+import './Post.scss';
 
 interface PostProps {
 	postData: PostModel;
@@ -12,8 +13,8 @@ function formatDate(dateString:string){
 
 function Post({ postData }: PostProps) {
 	return (
-		<div>			
-			<img
+		<div className="post-card">			
+			<img className="post-image"
 				onError={({ currentTarget }) => {
 					currentTarget.onerror = null; // prevents looping
 					currentTarget.src =
@@ -21,9 +22,11 @@ function Post({ postData }: PostProps) {
 				}}
 				src={postData.imageUrl}
 			/>
-			<Link to={`/users/${postData.postedBy.id}`}>Posted by {postData.postedBy.username}</Link>
-			<p>{formatDate(postData.createdAt)}</p>
-			<p>{postData.message}</p>			
+			<div className="post-details">
+				<Link className="post-user-name" to={`/users/${postData.postedBy.id}`}> {postData.postedBy.username}</Link>
+				<p className="post-date"> {formatDate(postData.createdAt)}</p>
+				<p className="post-message">{postData.message}</p>	
+			</div>
 		</div>
 	);
 }

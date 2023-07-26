@@ -4,6 +4,7 @@ import UserModel from "../../models/UserModel";
 import User from "./User";
 import Post from "../post/Post";
 import PostModel from "../../models/PostModel";
+import './UserDetail.scss'
 
 function UserDetail() {
 	let { userID } = useParams();
@@ -42,7 +43,10 @@ function UserDetail() {
 			) : (
 				<div>
 					<User userData={user!} />
-                    {usersPosts!.map((post) => <Post key={post.id} postData={post} />)}
+                    <div className="user-posts">
+						{usersPosts!.map((post) => <Post key={post.id} postData={post} />)}
+					</div>
+					
                     <h3>{user!.name}'s Liked Posts</h3>
                     {usersLikedPosts!.map((post) => <Post key={post.id} postData={post} />)}
                     <h3>{user!.name}'s Disliked Posts</h3>

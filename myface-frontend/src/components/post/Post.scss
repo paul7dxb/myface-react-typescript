@@ -1,0 +1,30 @@
+@use '../../index.scss' as *;
+
+.post-card{
+    width: 75vw;
+    background-color: $backgroundDarkerColor;
+}
+
+.post-image{
+    width: 100%;
+    height: 12em;
+    object-fit: cover;
+}
+
+.post-user-name{
+    font-weight: $boldWeight;
+    font-size: $mobile-font-size-subtitle;
+
+    text-decoration: none;
+    color: $foregroundColor;
+}
+
+.post-date{
+    font-weight: $lighterWeight;
+    font-size: $mobile-font-size-subtitle;
+    margin: 0px;
+}
+
+.post-details{
+    padding: 0.1em 0.5em 0.5em;
+}
