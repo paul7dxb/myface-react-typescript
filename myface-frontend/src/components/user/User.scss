@@ -1,0 +1,57 @@
+@use '../../index.scss' as *;
+
+.user-profile{
+    width: 100vw;
+}
+
+.user-cover-image{
+    width: 100vw;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.user-profile-image{
+    width: 9em;
+    height: 9em;
+    border-radius: 50%;
+    border: 0.25em solid $foregroundColor
+}
+
+.user-details-container{
+    position: relative;
+    top: -4em;
+
+    border-top-left-radius: 9.5em;
+    border-bottom-left-radius: 9.5em;
+
+    margin-left: $mobile-gutter;
+    background-color: $transparanantOverlayColor;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+
+}
+
+.user-text{
+    margin-left: $mobile-gutter;
+    word-wrap: break-word;
+}
+
+.user-name{
+    font-weight: $regularWeight;
+    font-size: $mobile-font-size-title;
+    margin-bottom: 0.5em;
+}
+.user-username{
+    font-weight: $boldWeight;
+    font-size: $mobile-font-size-subtitle;
+
+    text-decoration: none;
+    color: $foregroundColor;
+}
+
+.user-email{
+    font-weight: $lighterWeight;
+    font-size: $mobile-font-size-subtitle;
+    margin: 0px;
+}

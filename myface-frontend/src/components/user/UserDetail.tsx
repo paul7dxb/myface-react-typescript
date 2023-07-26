@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import UserModel from "../models/UserModel";
+import UserModel from "../../models/UserModel";
 import User from "./User";
-import Post from "./Post";
-import PostModel from "../models/PostModel";
+import Post from "../post/Post";
+import PostModel from "../../models/PostModel";
 
 function UserDetail() {
 	let { userID } = useParams();

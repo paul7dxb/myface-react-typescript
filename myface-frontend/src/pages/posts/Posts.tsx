@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Post from "../../components/Post";
+import Post from "../../components/post/Post";
 import PostModel from "../../models/PostModel";
 import { useSearchParams, Link } from "react-router-dom";
 

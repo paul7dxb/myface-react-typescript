@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PostModel from "../models/PostModel";
+import PostModel from "../../models/PostModel";
 
 interface PostProps {
 	postData: PostModel;

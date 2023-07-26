@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import User from "../../components/User";
+import User from "../../components/user/User";
 import UserModel from "../../models/UserModel";
 import { useSearchParams, Link } from "react-router-dom";
 
