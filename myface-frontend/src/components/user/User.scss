@@ -2,11 +2,13 @@
 
 .user-profile{
     width: 100vw;
+    height: calc(35vh + 5em);
+    margin-bottom: $mobile-gutter;
 }
 
 .user-cover-image{
     width: 100vw;
-    height: 40vh;
+    height: 35vh;
     object-fit: cover;
 }
 

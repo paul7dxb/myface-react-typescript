@@ -1,15 +1,23 @@
 @use '../../index.scss' as *;
-
-.user-posts{
+@mixin horizontal-flex(){
     display: flex;
     flex-wrap: nowrap;
     overflow: auto;
+    
+    .post-card{
+        flex-shrink: 0;
+        margin: $mobile-card-padding;
+    }
 }
 
-.user-posts .post-card {
-    flex-shrink: 0;
-    margin: $mobile-card-padding;
+.user-posts, .user-liked-posts, .user-disliked-posts{
+    @include horizontal-flex();
 }
 
+.postlist-heading{
+    font-weight: $regularWeight;
+    font-size: $mobile-font-size-title;
+    margin-left: $mobile-card-padding;
+}
 
 

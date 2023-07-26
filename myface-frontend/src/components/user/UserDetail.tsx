@@ -43,14 +43,18 @@ function UserDetail() {
 			) : (
 				<div>
 					<User userData={user!} />
+					<h3 className="postlist-heading">{user!.name}'s Posts</h3>
                     <div className="user-posts">
 						{usersPosts!.map((post) => <Post key={post.id} postData={post} />)}
 					</div>
-					
-                    <h3>{user!.name}'s Liked Posts</h3>
-                    {usersLikedPosts!.map((post) => <Post key={post.id} postData={post} />)}
-                    <h3>{user!.name}'s Disliked Posts</h3>
-                    {usersDislikedPosts!.map((post) => <Post key={post.id} postData={post} />)}
+					<h3 className="postlist-heading">Posts {user!.name} Liked </h3>
+					<div className="user-liked-posts">
+						{usersLikedPosts!.map((post) => <Post key={post.id} postData={post} />)}
+					</div>                                       
+                    <h3 className="postlist-heading">Posts {user!.name} Disliked </h3>
+					<div className="user-disliked-posts">
+						{usersDislikedPosts!.map((post) => <Post key={post.id} postData={post} />)}
+					</div>
 				</div>
 			)}
 		</div>
