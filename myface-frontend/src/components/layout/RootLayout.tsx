@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 const RootLayout = () => {
   return (
     <>
-    <NavBar/>
+      <NavBar/>
       <main> <Outlet/> </main>
     </>
   );

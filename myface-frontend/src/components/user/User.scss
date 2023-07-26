@@ -30,13 +30,13 @@
     background-color: $transparanantOverlayColor;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap
+    flex-wrap: nowrap
 
 }
 
 .user-text{
     margin-left: $mobile-gutter;
-    word-wrap: break-word;
+    word-wrap: anywhere;
 }
 
 .user-name{
