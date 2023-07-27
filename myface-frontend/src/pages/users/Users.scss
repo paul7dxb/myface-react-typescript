@@ -1,3 +1,5 @@
+@use '../../index.scss' as *;
+
 .user-nav-buttons{
     font-size: 1.5rem;
     margin: 20px;
@@ -7,4 +9,20 @@
 
 .user-nav-buttons:hover{
     background-color: yellow;
+}
+
+.user-list{
+    @include vertical-list();
+
+    .user-profile{
+        width: 100%;
+    }
+
+    .user-cover-image{
+        width: 100%;
+    }
+
+    .user-details-container{
+        margin-left: 0;
+    }
 }

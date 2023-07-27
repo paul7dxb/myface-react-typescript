@@ -22,10 +22,13 @@ function PageOfUsers() {
 
 	return (
 		<>
+			<h1>Users Page</h1>
 			{users === undefined ? (
 				<p>Loading...</p>
 			) : (
-				users?.map((user) => <User key={user.id} userData={user} />)
+				<div className="user-list">
+					{users?.map((user) => <User key={user.id} userData={user} />)}
+				</div>
 			)}
 
 			{pageNumber>1 ? <Link className="user-nav-buttons" to={`/users?page=${pageNumber-1}`} >Previous</Link> : undefined}

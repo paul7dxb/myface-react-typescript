@@ -12,12 +12,7 @@
 }
 
 .post-list{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: $mobile-gutter;
-    margin-right: $mobile-gutter;
-    width: calc(100vw - 2*$mobile-gutter);
+   @include vertical-list();
 
     .post-card{
         width: 100%;
