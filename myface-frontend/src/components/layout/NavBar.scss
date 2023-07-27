@@ -1,7 +1,5 @@
 @use '../../index.scss' as *;
 
-
-
 .mobile-navbar-toggler{
     position: absolute;
     top: 0;
@@ -32,20 +30,21 @@
         font-weight: $regularWeight;
         font-size: $mobile-font-size-title;
     }
+    @media only screen and (max-width: 992px) {
+        &--expanded{
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70vw;
+            height: 100vh;
+            z-index: 1;
 
-    &--expanded{
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 70vw;
-        height: 100vh;
-        z-index: 1;
+            background-color: $backgroundDarkerColor;
 
-        background-color: $backgroundDarkerColor;
-
-        display: flex;
-        flex-direction: column; 
+            display: flex;
+            flex-direction: column; 
+        }
     }
 
     &__pages{
@@ -70,5 +69,47 @@
         margin-bottom: 5vh;
         text-align: center;
     }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .mobile-navbar-toggler{
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+        padding-left: $mobile-gutter;
+        padding-right: $mobile-gutter;
+        margin-bottom: 1em;
+
+
+            &__title{
+                margin-top: 2vh;
+                margin-bottom: 1vh;
+            }
+
+
+            &__pages{
+                flex-direction: row;
+                width: 20vw;
+                margin-top: 0vh;
+                margin-bottom: 0vh;
+
+                a{
+                    margin-top: 2vh;
+                }
+            }
+
+            &__create-post{
+                margin-top: 2vh;
+                margin-bottom: 1vh;
+            }
+    }
+
 
 }

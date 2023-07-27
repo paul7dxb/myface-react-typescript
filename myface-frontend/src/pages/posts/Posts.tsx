@@ -23,7 +23,7 @@ function PageOfPosts() {
 
 	return (
 		<>
-			<h1>Posts Page</h1>
+			<h1 className="page-title">Posts Page</h1>
 			{posts === undefined ? (
 				<p>Loading...</p>
 			) : (

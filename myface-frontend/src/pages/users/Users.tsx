@@ -22,7 +22,7 @@ function PageOfUsers() {
 
 	return (
 		<>
-			<h1>Users Page</h1>
+			<h1 className="page-title">Users Page</h1>
 			{users === undefined ? (
 				<p>Loading...</p>
 			) : (

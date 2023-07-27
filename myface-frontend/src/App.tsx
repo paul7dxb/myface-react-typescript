@@ -7,6 +7,7 @@ import PageOfPosts from "./pages/posts/Posts";
 import PageOfUsers from "./pages/users/Users";
 import UserDetail from "./components/user/UserDetail";
 import ErrorPage from "./pages/ErrorPage";
+import CreateUser from "./pages/users/CreateUser";
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 		  {
 		    path: "users",
 		    element: <PageOfUsers />,
+		  },
+		  {
+		    path: "users/create",
+		    element: <CreateUser />,
 		  },
 		  {
 		    path: "users/:userID",

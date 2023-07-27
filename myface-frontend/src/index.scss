@@ -71,3 +71,15 @@ $desktop-font-size-secondary: 0.75em;
   margin-right: $mobile-gutter;
   width: calc(100vw - 2*$mobile-gutter);
 }
+
+@mixin page-title() {
+  padding-left: $mobile-gutter;
+  @media only screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.page-title{
+  @include page-title();
+}
+
