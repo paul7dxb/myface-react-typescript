@@ -15,6 +15,9 @@ $paragraphColor: #2d334a;
 $buttonColor: #ffd803;
 $buttonTextColor: #272343;
 
+$errorColor: red;
+$successColor: green;
+
 $strokeColor: #272343;
 $secondaryColor: #fffffe;
 $tertiaryColor: #bae8e8;
@@ -39,7 +42,7 @@ $lighterWeight: 300;
 
 // Spacings
 
-$mobile-gutter: 1.5em;
+$mobile-gutter: 1.5rem;
 $mobile-section-spacing: 2.5em;
 $mobile-card-padding: 1em;
 
@@ -83,3 +86,28 @@ $desktop-font-size-secondary: 0.75em;
   @include page-title();
 }
 
+
+@mixin font-subtitle(){
+
+  font-weight: $lighterWeight;
+  font-size: $mobile-font-size-subtitle;
+
+  @media only screen and (min-width: 600px) {
+    font-size: $tablet-font-size-subtitle;
+  }
+  @media only screen and (min-width: 992px) {
+    font-size: $desktop-font-size-subtitle;
+  }
+}
+
+@mixin form-input(){
+  @include font-subtitle()
+}
+
+@mixin standard-button(){
+  font-size: 1rem;
+  padding: 15px;
+  color: $foregroundColor;
+  background-color: transparent;
+  font-weight: $boldWeight;
+}

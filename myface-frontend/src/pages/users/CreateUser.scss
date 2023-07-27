@@ -1,0 +1,90 @@
+@use '../../index.scss' as *;
+
+.title-create-user{
+    margin-left: $mobile-gutter;
+}
+
+.invalid-input{
+    border-color: red;
+}
+
+.form-user{
+    margin-left: $mobile-gutter;
+    margin-right: $mobile-gutter;
+
+    &__field{
+        margin-top: calc($mobile-gutter / 2);
+        margin-bottom: calc($mobile-gutter / 2);
+
+        label{
+            @include font-subtitle;
+            display: block;
+        }
+
+        input{
+            @include form-input();
+            width:100%
+        }
+    }
+
+    &__caption{
+        display: none;
+        color: $errorColor;
+    }
+
+    &__result{
+
+
+        &--valid{
+            opacity: 0;
+            color: $successColor;
+            pointer-events: none;
+            animation-name: showTemporarily;
+            animation-duration: 2s;
+        }
+
+        &--invalid{
+            color: $errorColor;
+        }
+
+    }
+
+    &--submitted {
+        .form-user__input {
+            &:valid {
+                border-color: $successColor;
+            }
+
+            &:invalid{
+                border-color: $errorColor;
+
+                & + .form-user__caption {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__button{
+        @include standard-button();
+        
+    }
+
+
+}
+
+@keyframes showTemporarily {
+    0% {
+      opacity: 1;
+      pointer-events: all;
+    }
+  
+    75% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
