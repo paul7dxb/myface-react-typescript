@@ -28,3 +28,25 @@
 .post-details{
     padding: 0.1em 0.5em 0.5em;
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .post-card{
+        width: 35vw;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    .post-card{
+        width: 30vw;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .post-card{
+        width: 25vw;
+    }
+
+}

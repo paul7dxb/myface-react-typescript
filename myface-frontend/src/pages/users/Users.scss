@@ -21,8 +21,11 @@
     .user-cover-image{
         width: 100%;
     }
-
-    .user-details-container{
+    @media only screen and (max-width: 600px) {
+        .user-details-container{
         margin-left: 0;
     }
+    
+    }
 }
+
