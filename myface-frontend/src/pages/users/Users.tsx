@@ -31,8 +31,10 @@ function PageOfUsers() {
 				</div>
 			)}
 
-			{pageNumber>1 ? <Link className="user-nav-buttons" to={`/users?page=${pageNumber-1}`} >Previous</Link> : undefined}
-			<Link className="user-nav-buttons" to={`/users?page=${pageNumber+1}`} >Next</Link>
+			<div className="page-navigation">
+				{pageNumber>1 ? <Link className="user-nav-buttons" to={`/users?page=${pageNumber-1}`} >Previous</Link> : undefined}
+				<Link className="user-nav-buttons" to={`/users?page=${pageNumber+1}`} >Next</Link>
+			</div>
 
 		</>
 	);

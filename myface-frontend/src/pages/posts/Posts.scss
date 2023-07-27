@@ -8,16 +8,19 @@
 }
 
 .post-nav-buttons:hover{
-    background-color: yellow;
+    color: $primaryColor;
 }
 
 .post-list{
    @include vertical-list();
 
+
+
     .post-card{
         width: 100%;
         margin: calc($mobile-gutter/2) 0;
     }
+
 }
 
 .page-navigation{
@@ -28,20 +31,29 @@
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {
-//     .post-list{
-//         width: 35vw;
-//     }
-// }
+@media only screen and (min-width: 600px) {
+    .post-list{
+        gap:  0 $mobile-gutter;
 
-// @media only screen and (min-width: 992px) {
-//     .post-list{
-//         width: 30vw;
-//     }
-// }
+        .post-card{
+            flex-grow: 1;
+            width: 30vw;
+        }
+    }
+}
 
-// @media only screen and (min-width: 1200px) {
-//     .post-list{
-//         width: 25vw;
-//     }
-// }
+@media only screen and (min-width: 992px) {
+    .post-list{
+        .post-card{
+            width: 25vw;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .post-list{
+        .post-card{
+            width: 20vw;
+        }
+    }
+}

@@ -35,7 +35,7 @@ function PageOfPosts() {
 
 			<div className="page-navigation">
 				{pageNumber > 1 ? <Link className="post-nav-buttons" to={`/posts?page=${pageNumber-1}`} >Previous</Link> : undefined}
-			<Link className="post-nav-buttons" to={`/posts?page=${pageNumber+1}`} >Next</Link>
+				<Link className="post-nav-buttons" to={`/posts?page=${pageNumber+1}`} >Next</Link>
 			</div>
 			
 

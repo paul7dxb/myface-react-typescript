@@ -16,6 +16,10 @@ const router = createBrowserRouter([
 		// loader: rootLoader,
 		children: [
 		  {
+		    path: "/",
+		    element: <PageOfPosts />,
+		  },
+		  {
 		    path: "posts",
 		    element: <PageOfPosts />,
 		  },
